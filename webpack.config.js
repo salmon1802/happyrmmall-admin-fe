@@ -2,7 +2,7 @@
 * @Author: Rosen
 * @Date:   2016-11-20 13:19:28
 * @Last Modified by:   Rosen
-* @Last Modified time: 2017-06-15 09:38:12
+* @Last Modified time: 2017-03-21 18:13:41
 * 知识点：css单独打包、全局jquery引用、各种loader
 */
 
@@ -12,7 +12,7 @@ var ExtractTextPlugin   = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin   = require('html-webpack-plugin');
 
 // 环境变量, dev, (test), online
-var WEBPACK_ENV            = process.env.WEBPACK_ENV || 'dev';
+var WEBPACK_ENV            = process.env.WEBPACK_ENV || 'dev'; 
 
 // webpack config
 var config = {
@@ -26,7 +26,7 @@ var config = {
     // path && publickPath
     output: {
         path        : __dirname + '/dist/',
-        publicPath  : WEBPACK_ENV === 'online' ? '//s.happyrmmall.cn/happyrmmall-admin-fe/dist/' : '/dist/',
+        publicPath  : WEBPACK_ENV === 'online' ? '//s.happymmall.com/mmall_admin_fe/dist/' : '/dist/',
         filename    : 'js/[name].js'
     },
     resolve: {
@@ -42,12 +42,10 @@ var config = {
     module: {
         // noParse: [],
         loaders: [
-            {
-                test: /\.css$/, loader: ExtractTextPlugin.extract({
+            {test: /\.css$/, loader: ExtractTextPlugin.extract({
                 use: 'css-loader',
                 fallback : 'style-loader'
-            })
-            },
+            })},
             {test: /\.scss$/, loader: ExtractTextPlugin.extract({
                 use: 'css-loader!sass-loader',
                 fallback : 'style-loader'
@@ -83,7 +81,7 @@ var config = {
         // html 加载
         new HtmlWebpackPlugin({
             filename        : 'view/index.html',
-            title           : 'RMMall 后台管理系统',
+            title           : 'MMall 后台管理系统',
             template        : './src/index.html',
             favicon         : './favicon.ico',
             inject          : true,
