@@ -33,6 +33,7 @@ const RichEditor = React.createClass({
             defaultValue: this.props.placeholder,
             upload:{
                 url             : _mm.getServerUrl('/manage/product/richtext_img_upload.do'),
+                method  : 'post',
                 defaultImage    : '',
                 fileKey         :'upload_file'
             }
