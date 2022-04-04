@@ -42,6 +42,7 @@ export default class Order{
     sendGoods(orderNo){
         return _mm.request({
             url     : _mm.getServerUrl('/manage/order/send_goods.do'),
+            method  : 'post',
             data    : {
                 orderNo : orderNo || 0
             }

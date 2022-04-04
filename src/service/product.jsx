@@ -39,10 +39,11 @@ export default class Product{
         }
             
     }
-    // 获取商品信息
+    // 保存或更新商品信息
     saveProduct(product){
         return _mm.request({
             url     : _mm.getServerUrl('/manage/product/save.do'),
+            method  : 'post',
             data    : product
         });
     }
@@ -50,6 +51,7 @@ export default class Product{
     setProductStatus(productId, status){
         return _mm.request({
             url     : _mm.getServerUrl('/manage/product/set_sale_status.do'),
+            method  : 'put',
             data    : {
                 productId   : productId,
                 status      : status
@@ -69,6 +71,7 @@ export default class Product{
     saveCategory(category){
         return _mm.request({
             url     : _mm.getServerUrl('/manage/category/add_category.do'),
+            method  : 'post',
             data    : {
                 parentId        : category.parentId    || 0,
                 categoryName    : category.categoryName  || ''
@@ -79,6 +82,7 @@ export default class Product{
     updateCategoryName(category){
         return _mm.request({
             url     : _mm.getServerUrl('/manage/category/set_category_name.do'),
+            method  : 'put',
             data    : category
         });
     }
