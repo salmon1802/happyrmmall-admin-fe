@@ -31,6 +31,7 @@ const TopNav = React.createClass({
     },
     onLogout(){
         _user.logout().then(res => {
+            _mm.removeStorage('userInfo');
             window.location.href = '#/login';
         }, errMsg => {
             _mm.errorTips(errMsg);
@@ -52,7 +53,7 @@ const TopNav = React.createClass({
                     <li className="dropDown">
                         {
                             this.state.userName ? 
-                            <span>欢迎，{this.state.username}</span> :
+                            <span>欢迎，{this.state.userName}</span> :
                             <span>欢迎您</span>
                         }
                         
