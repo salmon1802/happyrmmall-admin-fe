@@ -52,8 +52,8 @@ const TopNav = React.createClass({
                     <li className="dropDown">
                         {
                             this.state.userName ? 
-                            <span>欢迎，{this.state.userName}</span> :
-                            <span>欢迎</span>
+                            <span>欢迎，{this.state.username}</span> :
+                            <span>欢迎您</span>
                         }
                         
                     </li>
