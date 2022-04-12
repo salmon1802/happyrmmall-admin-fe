@@ -52,7 +52,7 @@ const ProductList = React.createClass({
         }
         // 查询
         _product.getProductList(listParam).then(res => {
-            console.log(res)
+            // console.log(res)
             this.setState(res);
         }, err => {
             // _mm.errorTips(err.msg || err.statusText);
