@@ -9,12 +9,11 @@
     yarn config set registry https://registry.npm.taobao.org/ -g  
     yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g  
     
-3.安装ruby sass,这里推荐使用Ruby Sass@3.7.4
 
-4.在项目根目录执行初始化
+3.在项目根目录执行初始化
     yarn install  
 
-5.启动项目
+4.启动项目
      yarn run dist   
      
 务必要将package中的simditor版本控制在2.3.22以下，否则会有不必要的麻烦  
