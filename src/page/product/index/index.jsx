@@ -54,9 +54,9 @@ const ProductList = React.createClass({
         _product.getProductList(listParam).then(res => {
             console.log(res)
             this.setState(res);
-        }, err => {
+        }, errMsg => {
             //_mm.errorTips(err.msg || err.statusText);
-            _mm.errorTips(err.msg);
+            _mm.errorTips(errMsg);
         });
     },
     // 搜索类型变化
